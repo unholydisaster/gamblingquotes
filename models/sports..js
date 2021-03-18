@@ -21,7 +21,7 @@ const SportSchema=new mongoose.Schema({
 
    const validateSport=sport=>{
           const schema=yup.object().shape({
-              Quote:yup.string().required().min(2).max(200),
+              Quote:yup.string().required().min(2).max(100),
               Author:yup.string().required().min(2).max(50),
           });
           return schema

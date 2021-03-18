@@ -35,7 +35,7 @@ router.get("/:sportId",async(req,res)=>{
 router.put("/:sportId",async(req,res)=>{
     const updatedSport=await Sport.findByIdAndUpdate(req.params.sportId,{
         quote:req.body.Quote,
-        author:req.body.Author,
+        author:req.body.Author
     },
     {new:true}
     );
