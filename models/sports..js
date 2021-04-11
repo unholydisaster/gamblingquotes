@@ -1,4 +1,5 @@
-const mongoose =require('mongoose')
+const mongoose =require('mongoose');
+const { string} = require('yup');
 const yup=require('yup');
 
 
@@ -21,8 +22,8 @@ const SportSchema=new mongoose.Schema({
 
    const validateSport=sport=>{
           const schema=yup.object().shape({
-              Quote:yup.string().required().min(2).max(200),
-              Author:yup.string().required().min(2).max(50)
+              quote:yup.string().required().min(2).max(200),
+              author:yup.string().required().min(2).max(50)
           });
           return schema
           .validate(sport)

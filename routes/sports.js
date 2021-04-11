@@ -8,8 +8,8 @@ router.post('/', async(req,res)=>{
     if(error.message)res.status(400).send(error.message)
 
     sport = new Sport({
-        quote:req.body.Quote,
-        author:req.body.Author
+        quote:req.body.quote,
+        author:req.body.author
     });
     sport.save().then((sport)=>{
         res.send(sport);
@@ -34,8 +34,8 @@ router.get("/:sportId",async(req,res)=>{
 //UPDATE sport BASED On ID
 router.put("/:sportId",async(req,res)=>{
     const updatedSport=await Sport.findByIdAndUpdate(req.params.sportId,{
-        quote:req.body.Quote,
-        author:req.body.Author
+        quote:req.body.quote,
+        author:req.body.author
     },
     {new:true}
     );
